@@ -55,6 +55,8 @@ Plug 'kabouzeid/nvim-lspinstall'
 " Syntax Parser
 " We recommend updating the parsers on update
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+" Flutter
+Plug 'akinsho/flutter-tools.nvim'
 " Initialize plugin system
 call plug#end()
 
@@ -165,6 +167,9 @@ set colorcolumn=9999
 
 " lsp-rooter config
 :lua require("plugin/lsp-rooter")
+
+" flutter-tools
+:lua require("plugin/flutter-tools")
 
 " Basic Essentials 
 syntax on

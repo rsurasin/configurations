@@ -13,6 +13,9 @@ function fish_right_prompt -d "Write out the right prompt"
     date '+%m/%d/%y %H:%M:%S'
 end
 
+# Flutter
+set PATH /Users/rahulsurasinghe/Development/tools/flutter/bin $PATH
+
 # base16 themes
 # Base16 Shell
 # if status --is-interactive
