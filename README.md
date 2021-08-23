@@ -79,6 +79,7 @@ ln -s ~/Development/configurations/config/nvim/lua/plugin/navigator.lua ~/.conf/
 ln -s ~/Development/configurations/config/nvim/lua/plugin/nvim-tree.lua ~/.config/nvim/lua/plugin
 ln -s ~/Development/configurations/config/nvim/lua/plugin/lualine.lua ~/.config/nvim/lua/plugin 
 ln -s ~/Development/configurations/config/nvim/lua/plugin/treesitter.lua ~/.config/nvim/lua/plugin
+ln -s ~/Development/configurations/config/nvim/lua/plugin/flutter-tools.lua ~/.config/nvim/lua/plugin
 
 # neovim lsp 
 ln -s ~/Development/configurations/config/nvim/lua/lsp/rust-ls.lua ~/.config/nvim/lua/lsp/rust-ls.lua
