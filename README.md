@@ -39,54 +39,54 @@ brew bundle --file=~/Development/config/Brewfile
 ## File Mappings
 ```fish
 # alacritty 
-ln -s ~/Development/configurations/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/DevelopmentTools/configurations/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # kitty 
-ln -s ~/Development/configurations/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
-ln -s ~/Development/configurations/config/kitty/themes/base16-material-darker-256.conf ~/.config/kitty/themes/
-ln -s ~/Development/configurations/config/kitty/themes/batman.conf ~/.config/kitty/themes/
-ln -s ~/Development/configurations/config/kitty/themes/dracula.conf ~/.config/kitty/themes/
-ln -s ~/Development/configurations/config/kitty/themes/gruvbox_dark.conf ~/.config/kitty/themes/
-ln -s ~/Development/configurations/config/kitty/themes/jetbrains_dracula.conf ~/.config/kitty/themes/
-ln -s ~/Development/configurations/config/kitty/themes/monokai_pro.conf ~/.config/kitty/themes/
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/kitty/themes/base16-material-darker-256.conf ~/.config/kitty/themes/
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/kitty/themes/batman.conf ~/.config/kitty/themes/
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/kitty/themes/dracula.conf ~/.config/kitty/themes/
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/kitty/themes/gruvbox_dark.conf ~/.config/kitty/themes/
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/kitty/themes/jetbrains_dracula.conf ~/.config/kitty/themes/
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/kitty/themes/monokai_pro.conf ~/.config/kitty/themes/
 
 # tmux 
-ln -s ~/Development/configurations/tmux.conf ~/.tmux.conf
+ln -s ~/Oteemo/DevelopmentTools/configurations/tmux.conf ~/.tmux.conf
 
 # fish shell
-ln -s ~/Development/configurations/config/fish/config.fish ~/.config/fish/config.fish
-ln -s ~/Development/configurations/config/fish/fish_plugins ~/.config/fish/fish_plugins
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/fish/config.fish ~/.config/fish/config.fish
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/fish/fish_plugins ~/.config/fish/fish_plugins
 
 # oh-my-fish
-ln -s ~/Development/configurations/config/omf/channel ~/.config/omf/channel
-ln -s ~/Development/configurations/config/omf/bundle ~/.config/omf/bundle
-ln -s ~/Development/configurations/config/omf/theme ~/.config/omf/theme
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/omf/channel ~/.config/omf/channel
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/omf/bundle ~/.config/omf/bundle
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/omf/theme ~/.config/omf/theme
 
 # neovim
-ln -s ~/Development/configurations/config/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/init.vim ~/.config/nvim/init.vim
 
 # neovim plugins
-ln -s ~/Development/configurations/config/nvim/lua/plugin/lsp-rooter.lua ~/.config/nvim/lua/plugin/
-ln -s ~/Development/configurations/config/nvim/lua/plugin/nvim-bufferline.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/neogit.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/gitsigns.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/telescope.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/nvim-web-devicons.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/nvim-lspinstall.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/nvim-compe.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/nvim-lspconfig.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/navigator.lua ~/.conf/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/nvim-tree.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/lualine.lua ~/.config/nvim/lua/plugin 
-ln -s ~/Development/configurations/config/nvim/lua/plugin/treesitter.lua ~/.config/nvim/lua/plugin
-ln -s ~/Development/configurations/config/nvim/lua/plugin/flutter-tools.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/lsp-rooter.lua ~/.config/nvim/lua/plugin/
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-bufferline.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/neogit.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/gitsigns.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/telescope.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-web-devicons.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-lspinstall.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-compe.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-lspconfig.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/navigator.lua ~/.conf/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-tree.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/lualine.lua ~/.config/nvim/lua/plugin 
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/treesitter.lua ~/.config/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/flutter-tools.lua ~/.config/nvim/lua/plugin
 
 # neovim lsp 
-ln -s ~/Development/configurations/config/nvim/lua/lsp/rust-ls.lua ~/.config/nvim/lua/lsp/rust-ls.lua
-ln -s ~/Development/configurations/config/nvim/lua/lsp/python-ls.lua ~/.config/nvim/lua/lsp/python-ls.lua
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/lsp/rust-ls.lua ~/.config/nvim/lua/lsp/rust-ls.lua
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/lsp/python-ls.lua ~/.config/nvim/lua/lsp/python-ls.lua
 
 # starship prompt
-ln -s ~/Development/configurations/config/starhip.toml ~/.config/starship.toml
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/starhip.toml ~/.config/starship.toml
 ```
 
 ## Obsidian Notes
