@@ -75,7 +75,7 @@ ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-web-d
 ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-lspinstall.lua ~/.config/nvim/lua/plugin
 ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-compe.lua ~/.config/nvim/lua/plugin
 ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-lspconfig.lua ~/.config/nvim/lua/plugin
-ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/navigator.lua ~/.conf/nvim/lua/plugin
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/navigator.lua ~/.config/nvim/lua/plugin
 ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/nvim-tree.lua ~/.config/nvim/lua/plugin
 ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/lualine.lua ~/.config/nvim/lua/plugin 
 ln -s ~/Oteemo/DevelopmentTools/configurations/config/nvim/lua/plugin/treesitter.lua ~/.config/nvim/lua/plugin
