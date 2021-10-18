@@ -39,7 +39,7 @@ brew bundle --file=~/Development/config/Brewfile
 ## File Mappings
 ```fish
 # alacritty 
-ln -s ~/DevelopmentTools/configurations/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/Oteemo/DevelopmentTools/configurations/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # kitty 
 ln -s ~/Oteemo/DevelopmentTools/configurations/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
