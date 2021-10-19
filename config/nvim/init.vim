@@ -19,7 +19,7 @@ Plug 'folke/tokyonight.nvim'
 Plug 'akinsho/nvim-bufferline.lua'
 " Indent Blank Lines
 " Requires lua branch until v0.5 is released
-Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+Plug 'lukas-reineke/indent-blankline.nvim'
 " Status Line 
 Plug 'hoob3rt/lualine.nvim'
 " Web Icons 
@@ -70,7 +70,7 @@ colorscheme tokyonight
 set termguicolors
 
 " nvim-dev-webicons
-:lua require("plugin/nvim-web-devicons")
+:lua require("nvim-web-devicons")
 
 " nvim-tree
 nnoremap <leader>o :NvimTreeOpen<CR> " Open Nvim-tree
