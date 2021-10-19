@@ -23,3 +23,6 @@ set PATH /Users/rahulsurasinghe/Development/tools/flutter/bin $PATH
 #     source "$BASE16_SHELL/profile_helper.fish"
 # end
 
+# gcloud cli
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+
