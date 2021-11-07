@@ -90,7 +90,16 @@ ln -s ~/Development/configurations/config/starhip.toml ~/.config/starship.toml
 ```
 
 ## Obsidian Notes
-Git clone obsidian notes repo: 
+### TODO
+Git clone obsidian notes repo:
 ```fish
 
 ```
+
+## Releases
+### v1.0
+- Initial commit w/ all dotfiles
+
+### v1.1
+- Incorporated flutter-tools plugin to neovim
+- Updated fish shell with the path to flutter 
