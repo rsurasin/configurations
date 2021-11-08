@@ -23,12 +23,19 @@ brew "libevent"
 brew "git"
 # Includes clang for c++
 brew "llvm"
-brew "neovim"
 brew "node"
 brew "pyenv"
 brew "redis", restart_service: true
 brew "subversion"
 brew "tmux"
 brew "vips"
+# Neovim dependencies
+brew "ninja"
+brew "libtool"
+brew "automake"
+brew "cmake"
+brew "pkg-config"
+brew "gettext"
+brew "curl"
 # brew install --cask
 cask "alacritty"
