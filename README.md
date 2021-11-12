@@ -103,3 +103,15 @@ Git clone obsidian notes repo:
 ### v1.1
 - Incorporated flutter-tools plugin to neovim
 - Updated fish shell with the path to flutter 
+
+### v2.0
+- Major Update: Converted vimscript config of neovim to lua
+    - Migrated from vim-plug to packer
+    - Added `plugin` directory to autoload keymaps and options 
+    - Added `lua/colors` directory to store favorite colorschemes
+    - Added `lua/scripts` directory to run helpful scripts for config 
+        - Read commit for more detail 
+    - Migrated from `nvim-compe` to `nvim-cmp`
+    - Migrated from `nvim-lspinstall` to `nvim-lsp-installer`
+- Updated tmux config to support undercurls 
+- TODO: Update documentation
