@@ -51,8 +51,8 @@ cmp.setup({
         buffer = '[Buf]',
         nvim_lua = '[Lua]',
         path = '[Pth]',
-        calc = '[Cal]',
-        emoji = '[Emj]',
+        -- calc = '[Cal]',
+        -- emoji = '[Emj]',
         rg = '[RipGrep]',
       })[entry.source.name]
 
@@ -65,9 +65,8 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({
+    ['<C-y>'] = cmp.mapping.confirm({
         behavior = cmp.ConfirmBehavior.Replace,
         select = true,
     }),
@@ -90,12 +89,17 @@ cmp.setup({
       end
     end,
   },
+  -- Order in which you put sources is priority
+  -- You can configure:
+  --    keyword_length
+  --    priority
+  --    max_item_count
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'buffer' },
+    { name = 'buffer', keyword_length = 5 },
     { name = 'path' },
-    { name = 'nvim_lua' },
+    { name = 'nvim_lua' }, -- Only active in lua files
     { name = 'rg' },
   },
 })
