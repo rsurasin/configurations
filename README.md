@@ -115,3 +115,21 @@ Git clone obsidian notes repo:
     - Migrated from `nvim-lspinstall` to `nvim-lsp-installer`
 - Updated tmux config to support undercurls 
 - TODO: Update documentation
+
+### v2.1
+- Updated nvim-cmp configuration
+    - Removed Emoji and Calc
+    - Added comments in the config to make it more clear
+    - Added `keyword_length` to buffer
+    - Removed `nvim-compe.lua` (DEPRECATED)
+- Added configuration files to the following language servers:
+    - yamls
+    - cssls
+    - html
+    - dockerls
+    - sumneko_lua
+    - tsserver
+    - Note: Already had pyright and rust_analyzer installed
+- `init.lua` now requires the `lua/lsp` directory
+- `lsp-rooter` plugin is deprecated, therefore, substituted it with `project-nvim` from the same author
+    - Had to update `nvim-tree` and `telescope` to get it integrated with `project-nvim`
