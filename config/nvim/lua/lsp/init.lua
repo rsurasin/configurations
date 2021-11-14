@@ -1,0 +1,8 @@
+require'lsp/css-ls'
+require'lsp/docker-ls'
+require'lsp/html-ls'
+require'lsp/js-ls'
+require'lsp/lua-ls'
+require'lsp/python-ls'
+require'lsp/rust-ls'
+require'lsp/yaml-ls'
