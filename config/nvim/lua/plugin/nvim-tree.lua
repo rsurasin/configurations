@@ -44,35 +44,38 @@ local list = {
   { key = "g?",                           cb = tree_cb("toggle_help") },
 }
 
-  vim.g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    git = {
-      unstaged = "",
-      staged = "",
-      unmerged = "",
-      renamed = "",
-      untracked = "",
-      deleted = "",
-      ignored = "◌"
-    },
-    folder = {
-      arrow_open = "",
-      arrow_closed = "",
-      default = "",
-      open = "",
-      empty = "",
-      empty_open = "",
-      symlink = "",
-      symlink_open = "",
-    },
-    lsp = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  }
+vim.g.nvim_tree_icons = {
+  default = "",
+  symlink = "",
+  git = {
+    unstaged = "",
+    staged = "",
+    unmerged = "",
+    renamed = "",
+    untracked = "",
+    deleted = "",
+    ignored = "◌"
+  },
+  folder = {
+    arrow_open = "",
+    arrow_closed = "",
+    default = "",
+    open = "",
+    empty = "",
+    empty_open = "",
+    symlink = "",
+    symlink_open = "",
+  },
+  lsp = {
+    hint = "",
+    info = "",
+    warning = "",
+    error = "",
+  },
+}
+
+-- Required for project-nvim plugin
+vim.g.nvim_tree_respect_buf_cwd = 1
 
 require'nvim-tree'.setup {
   disable_netrw       = true,
@@ -82,7 +85,7 @@ require'nvim-tree'.setup {
   auto_close          = true, -- Closes the tree when its the last window
   open_on_tab         = true, -- Will open the tree (if open) when switching to a new tab
   hijack_cursor       = false,
-  update_cwd          = false,
+  update_cwd          = true, -- Required for project-nvim plugin
   update_to_buf_dir   = {
     enable = true,
     auto_open = true,
@@ -97,8 +100,8 @@ require'nvim-tree'.setup {
     }
   },
   update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
+    enable      = true, -- Required for project-nvim plugin
+    update_cwd  = true, -- Required for project-nvim plugin
     ignore_list = {}
   },
   system_open = {
