@@ -33,12 +33,17 @@ local on_attach = function(client, bufnr)
 
 end
 
--- DEPRECATED: From https://github.com/kabouzeid/nvim-lspinstall
--- Replaced with https://github.com/williamboman/nvim-lsp-installer
+
+-- Get Installed Servers
+local installer = require'nvim-lsp-installer'
+local servers = {}
+for ind, val in ipairs(installer.get_installed_servers()) do
+  table.insert(servers, ind, val.name)
+end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 -- local servers = { "pyright", "rust_analyzer", "tsserver", "dockerls", "cssls", "sumneko_lua", "yamlls" }
--- for _, lsp in ipairs(servers) do
---   nvim_lsp[lsp].setup { on_attach = on_attach }
--- end
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup { on_attach = on_attach }
+end
 
