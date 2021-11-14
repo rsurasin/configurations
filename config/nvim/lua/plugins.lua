@@ -105,8 +105,8 @@ return require('packer').startup(function(use)
   }
   -- Rooter: magically cd into project directory
   use {
-    'ahmedkhalf/lsp-rooter.nvim',
-    config = [[require('plugin/lsp-rooter')]]
+    'ahmedkhalf/project.nvim',
+    config = [[require('plugin/project')]]
   }
   -- Intellisense
   use {
