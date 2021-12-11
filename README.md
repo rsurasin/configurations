@@ -133,3 +133,10 @@ Git clone obsidian notes repo:
 - `init.lua` now requires the `lua/lsp` directory
 - `lsp-rooter` plugin is deprecated, therefore, substituted it with `project-nvim` from the same author
     - Had to update `nvim-tree` and `telescope` to get it integrated with `project-nvim`
+
+### v2.2
+- Removed Oh-My-Fish
+- Fisher installed `z` and `nvm`
+- Updated `Brewfile` with helpful CLI tools: `exa`, `fzf`, `fd`, etc.
+- Updated `config.fish` with fzf keybindings and useful abbreviations
+- Alacritty terminal and Kitty terminal uses JetBrains Mono
