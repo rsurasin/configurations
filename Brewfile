@@ -13,21 +13,27 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 # brew install
-brew "fish"
-brew "starship"
-brew "ripgrep"
+brew "fish" # favorite shell
+brew "starship" # shell prompt
 brew "sqlite"
 # https://github.com/universal-ctags/ctags
 brew "ctags"                
 brew "libevent"
-brew "git"
+brew "git" # self-explanatory
+# Helpful CLI
+brew "fzf" # fuzzy finder
+brew "exa" # ls replacement
+brew "bat" # cat replacement
+brew "fd" # find replacement
+brew "ripgrep" # grep replacement
+brew "tldr" # simplified man pages
 # Includes clang for c++
 brew "llvm"
-brew "node"
-brew "pyenv"
-brew "redis", restart_service: true
+brew "node" # js runtime
+brew "pyenv" # python version management
+brew "redis", restart_service: true # cache
 brew "subversion"
-brew "tmux"
+brew "tmux" # terminal multiplexer
 brew "vips"
 # Neovim dependencies
 brew "ninja"
@@ -38,4 +44,4 @@ brew "pkg-config"
 brew "gettext"
 brew "curl"
 # brew install --cask
-cask "alacritty"
+cask "alacritty" # terminal
