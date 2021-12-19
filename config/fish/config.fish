@@ -20,7 +20,7 @@ set -x MANPAGER "sh -c 'col -bx | bat --theme=Dracula -l man -p'"
 fish_add_path $HOME/.cargo/bin
 
 # Flutter
-fish_add_path /Users/rahulsurasinghe/Development/tools/flutter/bin
+fish_add_path $HOME/Development/tools/flutter/bin
 
 # fzf
 set -x FZF_DEFAULT_OPTS "--height 40% --layout=reverse --border --cycle --preview-window=wrap --marker='*' --no-mouse --bind='ctrl-n:down,ctrl-p:up'"
