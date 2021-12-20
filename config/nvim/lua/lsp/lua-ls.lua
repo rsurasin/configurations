@@ -25,7 +25,7 @@ if not Path:new(sumneko_binary):exists() then
 end
 
 require'lspconfig'.sumneko_lua.setup {
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  cmd = {sumneko_binary};
   settings = {
     Lua = {
       runtime = {
