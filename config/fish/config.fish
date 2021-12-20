@@ -19,6 +19,11 @@ set -x MANPAGER "sh -c 'col -bx | bat --theme=Dracula -l man -p'"
 # Rust
 fish_add_path $HOME/.cargo/bin
 
+# Neovim
+# HACK: Add the path to lua language-server b/c Neovim v0.6 couldn't recognize where
+# the binary was located
+fish_add_path $HOME/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin
+
 # Flutter
 fish_add_path $HOME/Development/tools/flutter/bin
 
