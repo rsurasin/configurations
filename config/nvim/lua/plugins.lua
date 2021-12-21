@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     config = [[require('plugin/nvim-tree')]],
     requires = 'kyazdani42/nvim-web-devicons',
-    cmd = 'NvimTreeOpen',
+    cmd = 'NvimTreeToggle',
   }
   -- Fuzzy Finder
   use {
