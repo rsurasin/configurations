@@ -28,6 +28,9 @@ nnoremap({ "gb", ":BufferLinePick<CR>", silent = true }) -- Choose Buffer
 nnoremap({ "<leader>n", ":BufferLineCycleNext<CR>", silent = true }) -- Next Buffer
 nnoremap({ "<leader>p", ":BufferLineCyclePrev<CR>", silent = true }) -- Prev Buffer
 
+-- gitsigns
+nnoremap({ "<leader>b", ":Gitsigns toggle_current_line_blame<CR>", silent = true }) -- Toggle Git line blame
+
 -- nvim-tree
 nnoremap({ "<leader>o", ":NvimTreeToggle<CR>" }) -- Open/Close nvim-tree
 
