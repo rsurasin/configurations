@@ -31,7 +31,7 @@ nnoremap({ "<leader>p", ":BufferLineCyclePrev<CR>", silent = true }) -- Prev Buf
 -- gitsigns
 nnoremap({ "<leader>b", ":Gitsigns toggle_current_line_blame<CR>", silent = true }) -- Toggle Git line blame
 nnoremap({ "<leader>hn", ":Gitsigns next_hunk<CR>", silent = true }) -- Next Hunk
-nnoremap({ "<leader>hp", ":Gitsigns prev_hunk<CR>", silent = true }) -- Prev Hunk
+nnoremap({ "<leader>hN", ":Gitsigns prev_hunk<CR>", silent = true }) -- Prev Hunk
 
 -- nvim-tree
 nnoremap({ "<leader>o", ":NvimTreeToggle<CR>" }) -- Open/Close nvim-tree
