@@ -34,6 +34,9 @@ local server_opts = {
     ["sumneko_lua"] = function()
         require'lsp.lua-ls'
     end,
+    ["html"] = function()
+        require'lsp.html-ls'
+    end,
 }
 -- Use the server's custom settings, if they exist, otherwise default to the default options
 local server_options = server_opts[server.name] and server_opts[server.name]() or default_opts
