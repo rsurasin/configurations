@@ -11,6 +11,3 @@ require('plugins')
 
 -- Helper Script
 require('scripts')
-
--- LSP
-require('lsp')

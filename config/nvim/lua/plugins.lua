@@ -111,7 +111,6 @@ return require('packer').startup(function(use)
   -- Intellisense
   use {
     'neovim/nvim-lspconfig',
-    config = [[require('plugin/nvim-lspconfig')]]
   }
   use {
     'hrsh7th/nvim-cmp',
@@ -130,7 +129,7 @@ return require('packer').startup(function(use)
   }
   use {
     'williamboman/nvim-lsp-installer',
-    config = [[require('plugin/nvim-lsp-installer')]]
+    config = [[require('lsp/nvim-lsp-installer')]]
   }
   -- Syntax Parser
   use {
