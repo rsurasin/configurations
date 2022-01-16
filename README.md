@@ -26,15 +26,16 @@ brew bundle --file=~/Development/config/Brewfile
 ```
 
 ## Additional Installations/Configurations
-1. Install [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish) 
-2. Install [nvm](https://github.com/nvm-sh/nvm#git-install) 
-    - `nvm` doesn't work with `fish` but there are workarounds: [plugin-nvm](https://github.com/derekstavis/plugin-nvm)
-3. Configure [pyenv](https://github.com/pyenv/pyenv#basic-github-checkout):
+1. Install [Fisher](https://github.com/jorgebucaran/fisher)
+    - `fisher install dracula/fish`
+    - `fisher install jethrokuan/z`
+    - `fisher install jorgebucaran/nvm.fish`
+2. Configure [pyenv](https://github.com/pyenv/pyenv#basic-github-checkout):
     ```fish
     set -Ux PYENV_ROOT $HOME/.pyenv
     set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
     ```
-4. Download Nerd Fonts: [JetBrains Mono and Fira Code](https://www.nerdfonts.com/font-downloads)
+3. Download Nerd Fonts: [JetBrains Mono](https://www.nerdfonts.com/font-downloads)
 
 ## File Mappings
 ```fish
@@ -96,47 +97,3 @@ Git clone obsidian notes repo:
 
 ```
 
-## Releases
-### v1.0
-- Initial commit w/ all dotfiles
-
-### v1.1
-- Incorporated flutter-tools plugin to neovim
-- Updated fish shell with the path to flutter 
-
-### v2.0
-- Major Update: Converted vimscript config of neovim to lua
-    - Migrated from vim-plug to packer
-    - Added `plugin` directory to autoload keymaps and options 
-    - Added `lua/colors` directory to store favorite colorschemes
-    - Added `lua/scripts` directory to run helpful scripts for config 
-        - Read commit for more detail 
-    - Migrated from `nvim-compe` to `nvim-cmp`
-    - Migrated from `nvim-lspinstall` to `nvim-lsp-installer`
-- Updated tmux config to support undercurls 
-- TODO: Update documentation
-
-### v2.1
-- Updated nvim-cmp configuration
-    - Removed Emoji and Calc
-    - Added comments in the config to make it more clear
-    - Added `keyword_length` to buffer
-    - Removed `nvim-compe.lua` (DEPRECATED)
-- Added configuration files to the following language servers:
-    - yamls
-    - cssls
-    - html
-    - dockerls
-    - sumneko_lua
-    - tsserver
-    - Note: Already had pyright and rust_analyzer installed
-- `init.lua` now requires the `lua/lsp` directory
-- `lsp-rooter` plugin is deprecated, therefore, substituted it with `project-nvim` from the same author
-    - Had to update `nvim-tree` and `telescope` to get it integrated with `project-nvim`
-
-### v2.2
-- Removed Oh-My-Fish
-- Fisher installed `z` and `nvm`
-- Updated `Brewfile` with helpful CLI tools: `exa`, `fzf`, `fd`, etc.
-- Updated `config.fish` with fzf keybindings and useful abbreviations
-- Alacritty terminal and Kitty terminal uses JetBrains Mono
