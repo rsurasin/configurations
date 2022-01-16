@@ -42,3 +42,13 @@
 - Updated `Brewfile` with helpful CLI tools: `exa`, `fzf`, `fd`, etc.
 - Updated `config.fish` with fzf keybindings and useful abbreviations
 - Alacritty terminal and Kitty terminal uses JetBrains Mono
+
+### v2.3
+- Add flutter and rust binaries in `PATH` for fish shell
+- Helpful keymaps for buffer window management, redo, `nvim-tree` toggle, and `gitsigns`
+- Add offset to `bufferline` when `nvim-tree` is active
+- Refactor: changed `nvim-lspconfig.lua` to `opts.lua`, same functionality but returns a map to `nvim-lsp-installer.lua`
+- Refactor: moved all lsp logic to lsp folder
+- Bug Fix: `nvim-lsp-installer.lua` installs language servers and sets up the options for them, which fixes the bug for not being able to find the language servers in `PATH`
+- Use fish shell w/ nvim built-in terminal
+- `CHANGELOG.md` file to track releases going forward
