@@ -1,5 +1,11 @@
 -- Repo: https://github.com/nvim-treesitter/nvim-treesitter
 -- Reference: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/lua/plugin/treesitter.lua
+-- BUG: https://github.com/nvim-treesitter/nvim-treesitter/issues/1136
+-- NOTE: Open all folds in options.lua
+-- Highly Experimental (if fold breaks, `zx` should fix it)
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,

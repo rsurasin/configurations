@@ -26,15 +26,16 @@ brew bundle --file=~/Development/config/Brewfile
 ```
 
 ## Additional Installations/Configurations
-1. Install [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish) 
-2. Install [nvm](https://github.com/nvm-sh/nvm#git-install) 
-    - `nvm` doesn't work with `fish` but there are workarounds: [plugin-nvm](https://github.com/derekstavis/plugin-nvm)
-3. Configure [pyenv](https://github.com/pyenv/pyenv#basic-github-checkout):
+1. Install [Fisher](https://github.com/jorgebucaran/fisher)
+    - `fisher install dracula/fish`
+    - `fisher install jethrokuan/z`
+    - `fisher install jorgebucaran/nvm.fish`
+2. Configure [pyenv](https://github.com/pyenv/pyenv#basic-github-checkout):
     ```fish
     set -Ux PYENV_ROOT $HOME/.pyenv
     set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
     ```
-4. Download Nerd Fonts: [JetBrains Mono and Fira Code](https://www.nerdfonts.com/font-downloads)
+3. Download Nerd Fonts: [JetBrains Mono](https://www.nerdfonts.com/font-downloads)
 
 ## File Mappings
 ```fish
@@ -90,7 +91,9 @@ ln -s ~/Oteemo/DevelopmentTools/configurations/config/starhip.toml ~/.config/sta
 ```
 
 ## Obsidian Notes
-Git clone obsidian notes repo: 
+### TODO
+Git clone obsidian notes repo:
 ```fish
 
 ```
+

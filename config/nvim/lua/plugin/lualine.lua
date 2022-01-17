@@ -1,14 +1,16 @@
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'tokyonight',
+    -- theme = 'tokyonight',
+    -- theme = 'onedark',
+    theme = 'rose-pine',
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', {'diagnostics', sources = {'nvim_lsp'}}},
+    lualine_b = {'branch', {'diagnostics', sources = {'nvim_diagnostic'}}},
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'filetype'},
     lualine_y = {'progress'},
