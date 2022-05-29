@@ -52,3 +52,8 @@
 - Bug Fix: `nvim-lsp-installer.lua` installs language servers and sets up the options for them, which fixes the bug for not being able to find the language servers in `PATH`
 - Use fish shell w/ nvim built-in terminal
 - `CHANGELOG.md` file to track releases going forward
+
+### v2.4
+- Tmux feature improvements inspired by `oh-my-tmux`
+    - Implements Facebook Path Picker and URLview
+- Fish shell global editor is now Neovim
