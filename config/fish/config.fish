@@ -1,17 +1,16 @@
 # Starship Configuration
 starship init fish | source
 
+# Global Editor
+set -gx VISUAL nvim
+set -gx EDITOR $VISUAL
+
 # Pyenv
 status is-login; and pyenv init --path | source
 pyenv init - | source
 
 # Remove Greeting 
 set -U fish_greeting
-
-# Set the Right Prompt
-function fish_right_prompt -d "Write out the right prompt"
-    date '+%m/%d/%y %H:%M:%S'
-end
 
 # manpage
 set -x MANPAGER "sh -c 'col -bx | bat --theme=Dracula -l man -p'"
