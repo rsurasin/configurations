@@ -7,6 +7,14 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all"
+  ensure_installed = {
+      "c", "cpp", "css", "dart", "dockerfile",
+      "fish", "go", "graphql", "html", "javascript",
+      "json", "kotlin", "latex", "lua", "python",
+      "query", "regex", "rust", "scss",
+      "typescript", "yaml",
+  },
   highlight = {
     enable = true,
     -- custom_captures = {
