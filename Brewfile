@@ -27,6 +27,7 @@ brew "bat" # cat replacement
 brew "fd" # find replacement
 brew "ripgrep" # grep replacement
 brew "tldr" # simplified man pages
+brew "tree" # show file structure
 # Includes clang for c++
 brew "llvm"
 brew "node" # js runtime
