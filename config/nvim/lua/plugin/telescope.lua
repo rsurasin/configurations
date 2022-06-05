@@ -1,8 +1,10 @@
 -- https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/lua/tj/telescope/init.lua
 require('telescope').setup {
   defaults = {
+    layout_strategy = "vertical",
     layout_config = {
-      prompt_position = "top",
+        preview_cutoff = 10,
+        prompt_position = "top",
     },
     prompt_prefix =  "❯ ",
     selection_caret =  "❯ ",
@@ -22,4 +24,4 @@ require('telescope').setup {
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('projects')
-
+require('telescope').load_extension('file_browser')
