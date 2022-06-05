@@ -1,60 +1,43 @@
 -- Key Mappings
--- Make `vim.keymap` available
-vim.cmd [[runtime plugin/astronauta.vim]]
-
-local noremap = vim.keymap.noremap
-local nnoremap = vim.keymap.nnoremap
+local opts = { silent = true }
 
 -- Neovim
-nnoremap({ "U", "<C-r>" }) -- Redo
+vim.keymap.set("n", "U", "<C-r>", opts) -- Redo
 -- Search and replace word under cursor
-nnoremap({ "<leader>*", "*``cgn" }) -- Replace going forwards
-nnoremap({ "<leader>#", "#``cgN" }) -- Replace going backwards
+vim.keymap.set("n" ,"<leader>*", "*``cgn", opts) -- Replace going forwards
+vim.keymap.set("n" ,"<leader>#", "#``cgN", opts) -- Replace going backwards
 -- Buffers
-nnoremap({ "<leader><Tab>", ":b#<CR>" }) -- Switch to last used buffer
-nnoremap({ "<leader>=", "<C-W>=" }) -- Buffer windows same size
-nnoremap({ "<leader>_", "<C-W>_" }) -- Buffer window take entire height
-nnoremap({ "<leader>|", "<C-W>|" }) -- Buffer window take entire width
+vim.keymap.set("n", "<leader><Tab>", ":b#<CR>", opts) -- Switch to last used buffer
+vim.keymap.set("n", "<leader>=", "<C-W>=", opts) -- Buffer windows same size
+vim.keymap.set("n", "<leader>_", "<C-W>_", opts) -- Buffer window take entire height
+vim.keymap.set("n", "<leader>|", "<C-W>|", opts) -- Buffer window take entire width
 -- Prepend w/ a number to repeat command
-nnoremap({ "<leader>,", "<C-W>5<" }) -- Current buffer window resize smaller
-nnoremap({ "<leader>.", "<C-W>5>" }) -- Current buffer window resize larger
+vim.keymap.set("n", "<leader>,", "<C-W>5<", opts) -- Current buffer window resize narrower
+vim.keymap.set("n", "<leader>.", "<C-W>5>", opts) -- Current buffer window resize wider
 -- Prepend w/ a number to repeat command
-nnoremap({ "<leader>-", "<C-W>5-" }) -- Current buffer window resize shorter
-nnoremap({ "<leader>+", "<C-W>5+" }) -- Current buffer window resize taller
-nnoremap({ "<leader>d", ":bd<CR>" }) -- Delete Buffer
+vim.keymap.set("n", "<leader>-", "<C-W>5-", opts) -- Current buffer window resize shorter
+vim.keymap.set("n", "<leader>+", "<C-W>5+", opts) -- Current buffer window resize taller
+vim.keymap.set("n", "<leader>d", ":bd<CR>", opts) -- Delete Buffer
 
--- bufferline
-nnoremap({ "gb", ":BufferLinePick<CR>", silent = true }) -- Choose Buffer
-nnoremap({ "<leader>n", ":BufferLineCycleNext<CR>", silent = true }) -- Next Buffer
-nnoremap({ "<leader>p", ":BufferLineCyclePrev<CR>", silent = true }) -- Prev Buffer
-
--- gitsigns
-nnoremap({ "<leader>b", ":Gitsigns toggle_current_line_blame<CR>", silent = true }) -- Toggle Git line blame
-nnoremap({ "<leader>hn", ":Gitsigns next_hunk<CR>", silent = true }) -- Next Hunk
-nnoremap({ "<leader>hN", ":Gitsigns prev_hunk<CR>", silent = true }) -- Prev Hunk
-
--- nvim-tree
-nnoremap({ "<leader>o", ":NvimTreeToggle<CR>" }) -- Open/Close nvim-tree
-
--- navigator
-noremap({ "<C-h>", "<CMD>lua require('Navigator').left()<CR>", silent = true })
-noremap({ "<C-k>", "<CMD>lua require('Navigator').up()<CR>", silent = true })
-noremap({ "<C-l>", "<CMD>lua require('Navigator').right()<CR>", silent = true })
-noremap({ "<C-j>", "<CMD>lua require('Navigator').down()<CR>", silent = true })
-noremap({ "<C-p>", "<CMD>lua require('Navigator').previous()<CR>", silent = true })
-
--- telescope config
+-- Lazy Loaded Plugins Keymaps
+-- telescope keymap
 -- Search for files & open file browser
-nnoremap({ "<leader>ff", "<cmd>Telescope find_files<cr>" })
-nnoremap({ "<leader>fb", "<cmd>Telescope file_browser<cr>" })
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", opts)
 -- Ripgrep Search
-nnoremap({ "<leader>rf", "<cmd>Telescope live_grep<cr>" })
-nnoremap({ "<leader>rs", "<cmd>Telescope grep_string search<cr>" })
--- Search Git Files
-nnoremap({ "<leader>gf", "<cmd>Telescope git_files<cr>" })
+vim.keymap.set("n", "<leader>rf", "<cmd>Telescope live_grep<cr>", opts)
+vim.keymap.set("n", "<leader>rs", "<cmd>Telescope grep_string<cr>", opts)
+-- Git Integration
+vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>", opts)
+vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opts)
+vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_bcommits<cr>", opts)
 -- Search for/in Buffers
-nnoremap({ "<leader>ls", "<cmd>Telescope buffers<cr>" })
-nnoremap({ "<leader>bf", "<cmd>Telescope current_buffer_fuzzy_find<cr>" })
+vim.keymap.set("n", "<leader>ls", "<cmd>Telescope buffers<cr>", opts)
+vim.keymap.set("n", "<leader>rb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 -- Search Help Tags
-nnoremap({ "<leader>fh", "<cmd>Telescope help_tags<cr>" })
-
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+-- LSP Integration
+vim.keymap.set("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", opts)
+vim.keymap.set("n", "gI", "<cmd>Telescope lsp_implementations<cr>", opts)
+vim.keymap.set("n", "<leader>wd", "<cmd>Telescope lsp_document_symbols<cr>", opts)
+vim.keymap.set("n", "<leader>ww", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { silent = true, buffer = true })
