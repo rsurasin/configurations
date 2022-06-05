@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -80,16 +80,16 @@ _G.packer_plugins = {
     path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/Navigator.nvim",
     url = "https://github.com/numToStr/Navigator.nvim"
   },
-  ["astronauta.nvim"] = {
-    loaded = true,
-    path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/astronauta.nvim",
-    url = "https://github.com/tjdevries/astronauta.nvim"
-  },
   ["bufferline.nvim"] = {
     config = { "require('plugin/nvim-bufferline')" },
     loaded = true,
     path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
+  },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["cmp-buffer"] = {
     after_files = { "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua" },
@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/opt/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["doom-one.nvim"] = {
+    loaded = true,
+    path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/doom-one.nvim",
+    url = "https://github.com/NTBBloodbath/doom-one.nvim"
+  },
   ["flutter-tools.nvim"] = {
     config = { "require('plugin/flutter-tools')" },
     loaded = false,
@@ -169,6 +174,12 @@ _G.packer_plugins = {
     path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["kanagawa.nvim"] = {
+    config = { "require('colors/kanagawa')" },
+    loaded = true,
+    path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lualine.nvim"] = {
     config = { "require('plugin/lualine')" },
     loaded = true,
@@ -190,30 +201,20 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-nvim-lua", "cmp_luasnip", "cmp-rg", "cmp-buffer", "cmp-path", "cmp-cmdline" },
+    after = { "cmp-rg", "cmp_luasnip", "cmp-nvim-lua", "cmp-cmdline", "cmp-buffer", "cmp-path" },
     loaded = true,
     only_config = true
   },
   ["nvim-lsp-installer"] = {
-    config = { "require('plugin/nvim-lsp-installer')" },
+    config = { "require('lsp/nvim-lsp-installer')" },
     loaded = true,
     path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    config = { "require('plugin/nvim-lspconfig')" },
     loaded = true,
     path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-tree.lua"] = {
-    commands = { "NvimTreeOpen" },
-    config = { "require('plugin/nvim-tree')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     config = { "require('plugin/treesitter')" },
@@ -264,10 +265,14 @@ _G.packer_plugins = {
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
   ["rose-pine"] = {
-    config = { "require('colors/rose-pine')" },
     loaded = true,
     path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/Users/rahulsurasinghe/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -327,26 +332,10 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require('plugin/nvim-bufferline')
-time([[Config for bufferline.nvim]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-require('plugin/nvim-web-devicons')
-time([[Config for nvim-web-devicons]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 require('plugin/gitsigns')
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('plugin/nvim-cmp')
-time([[Config for nvim-cmp]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('plugin/nvim-lspconfig')
-time([[Config for nvim-lspconfig]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugin/treesitter')
@@ -355,42 +344,53 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for lualine.nvim]], true)
 require('plugin/lualine')
 time([[Config for lualine.nvim]], false)
+-- Config for: kanagawa.nvim
+time([[Config for kanagawa.nvim]], true)
+require('colors/kanagawa')
+time([[Config for kanagawa.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('plugin/nvim-cmp')
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+require('plugin/nvim-web-devicons')
+time([[Config for nvim-web-devicons]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 require('plugin/indent-blankline')
 time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-lsp-installer
+time([[Config for nvim-lsp-installer]], true)
+require('lsp/nvim-lsp-installer')
+time([[Config for nvim-lsp-installer]], false)
 -- Config for: Navigator.nvim
 time([[Config for Navigator.nvim]], true)
 require('plugin/navigator')
 time([[Config for Navigator.nvim]], false)
--- Config for: nvim-lsp-installer
-time([[Config for nvim-lsp-installer]], true)
-require('plugin/nvim-lsp-installer')
-time([[Config for nvim-lsp-installer]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-require('colors/rose-pine')
-time([[Config for rose-pine]], false)
 -- Config for: project.nvim
 time([[Config for project.nvim]], true)
 require('plugin/project')
 time([[Config for project.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require('plugin/nvim-bufferline')
+time([[Config for bufferline.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd cmp-rg ]]
 vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd cmp-cmdline ]]
 vim.cmd [[ packadd cmp-nvim-lua ]]
+vim.cmd [[ packadd cmp-rg ]]
 vim.cmd [[ packadd cmp_luasnip ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Neogit lua require("packer.load")({'neogit'}, { cmd = "Neogit", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'vim-startuptime'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeOpen lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeOpen", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -405,5 +405,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

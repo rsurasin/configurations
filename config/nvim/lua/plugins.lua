@@ -37,12 +37,30 @@ return require('packer').startup(function(use)
   use {
     'rose-pine/neovim',
     as = 'rose-pine',
+    tag = 'v1.*',
     -- NOTE: Uncomment when you want to use
-    config = [[require('colors/rose-pine')]]
+    -- config = [[require('colors/rose-pine')]]
   }
+  -- Catppuccin Theme w/ Plugin Support
+  use {
+    'catppuccin/nvim',
+    as = 'catppuccin',
+    config = [[require('colors/catppuccin')]],
+  }
+  -- Kanagawa Theme w/ Plugin Support
+  use {
+    'rebelot/kanagawa.nvim',
+    -- config = [[require('colors/kanagawa')]],
+  }
+  -- Doom One Theme w/ Plugin Support
+  use({
+    'NTBBloodbath/doom-one.nvim',
+    -- config = [[require('colors/DOOM')]],
+  })
   -- Bufferline
   use {
     'akinsho/bufferline.nvim',
+    tag = 'v2.*',
     config = [[require('plugin/nvim-bufferline')]],
     requires = 'kyazdani42/nvim-web-devicons'
   }
@@ -67,16 +85,7 @@ return require('packer').startup(function(use)
   }
 
   -- Utility
-  -- Enable Keymap
-  use 'tjdevries/astronauta.nvim'
   -- TODO: Look into editorconfig plugin
-  -- File Explorer
-  use {
-    'kyazdani42/nvim-tree.lua',
-    config = [[require('plugin/nvim-tree')]],
-    requires = 'kyazdani42/nvim-web-devicons',
-    cmd = 'NvimTreeToggle',
-  }
   -- Fuzzy Finder
   use {
     'nvim-telescope/telescope.nvim',
@@ -85,8 +94,11 @@ return require('packer').startup(function(use)
     cmd = 'Telescope',
     module = 'telescope',
   }
-  -- Telescope Extension
+  -- Telescope Extensions
+  -- fzf
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+  -- Telescope-file-browser
+  use { "nvim-telescope/telescope-file-browser.nvim" }
   -- Git
   use {
     'lewis6991/gitsigns.nvim',
