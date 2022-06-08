@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Rahul Surasinghe
+	email = 41207879+rsurasin@users.noreply.github.com
+[core]
+	editor = nvim
+[init]
+    defaultBranch = main
