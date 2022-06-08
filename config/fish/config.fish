@@ -1,6 +1,9 @@
 # Starship Configuration
 starship init fish | source
 
+# Globals
+# Global LANG
+set -gx LANG en_US.UTF-8
 # Global Editor
 set -gx VISUAL nvim
 set -gx EDITOR $VISUAL
