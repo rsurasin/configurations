@@ -16,7 +16,8 @@ pyenv init - | source
 set -U fish_greeting
 
 # manpage
-set -x MANPAGER "sh -c 'col -bx | bat --theme=Dracula -l man -p'"
+# THEMES: Dracula, gruvbox-dark
+set -x MANPAGER "sh -c 'col -bx | bat --theme=gruvbox-dark -l man -p'"
 
 # Rust
 fish_add_path $HOME/.cargo/bin
@@ -34,7 +35,8 @@ set -x FZF_ALT_C_COMMAND "fd -a --type d --follow --base-directory $HOME"
 fzf_key_bindings
 
 # alias
-alias fz "fd --type f --follow | fzf --height 40% --layout=reverse --border --cycle --preview-window=wrap --marker='*' --no-mouse --preview 'bat --style=numbers --theme=Dracula --color=always --line-range :500 {}' --bind='ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up,ctrl-o:toggle-preview,ctrl-n:down,ctrl-p:up,ctrl-y:execute-silent(echo -n {} | pbcopy)'"
+# THEMES: Dracula, gruvbox-dark
+alias fz "fd --type f --follow | fzf --height 40% --layout=reverse --border --cycle --preview-window=wrap --marker='*' --no-mouse --preview 'bat --style=numbers --theme=gruvbox-dark --color=always --line-range :500 {}' --bind='ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up,ctrl-o:toggle-preview,ctrl-n:down,ctrl-p:up,ctrl-y:execute-silent(echo -n {} | pbcopy)'"
 
 # functions
 function nvf
@@ -60,10 +62,12 @@ abbr -a gc "git checkout"
 abbr -a gs "git status"
 abbr -a gcm "git commit -m "
 
-# base16 themes
-# Base16 Shell
-# if status --is-interactive
-#     set BASE16_SHELL "$HOME/.config/base16-shell/"
-#     source "$BASE16_SHELL/profile_helper.fish"
-# end
+# base16 themes work w/ tmux
+# BUG: https://github.com/tomyun/base16-fish/issues/7
+if test -f ~/.config/fish/conf.d/base16.fish
+  rm ~/.config/fish/conf.d/base16.fish
+end
+if test -n "$base16_theme" && status --is-interactive && test -z "$TMUX"
+  base16-$base16_theme
+end
 
