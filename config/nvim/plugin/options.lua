@@ -15,7 +15,10 @@ vim.g.loaded_matchit      = 1
 vim.g.loaded_matchparen   = 1
 
 -- Basic Essentials
-opt.syntax = "on"
+opt.syntax = "on" -- nvim default
+opt.hidden = true -- nvim default
+opt.termguicolors = true
+opt.scrolloff = 8 -- Cursor doesn't have to be at the end of the buffer to scroll
 
 -- Tabs
 opt.tabstop = 4 -- Width of tab
@@ -41,7 +44,7 @@ opt.splitbelow = true
 opt.foldenable = false -- start editing with all folds open
 
 -- https://www.gilesorr.com/blog/vim-tips-22-modelines.html
-opt.modelines = 0
+opt.modeline = false
 
 -- https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile
 -- Backup Files Location
@@ -57,6 +60,9 @@ opt.number = true -- Show line no. where the cursor is on
 opt.relativenumber = true -- Show relative line no.
 opt.numberwidth = 1 -- Width of the Col in terms of # of chars
 
+-- Colors
+vim.opt.colorcolumn = "80" -- Bar to prevent going 80 char in a line
+vim.cmd[[highlight clear ColorColumn]]
 -- Color of the numbers that aren't highligheted (i.e. color of line no. where cursor isn't on)
 vim.cmd[[highlight LineNr term=bold cterm=NONE ctermfg=LightGrey ctermbg=NONE gui=NONE guifg=LightGrey guibg=NONE]]
 -- Remove underline under line numbers
