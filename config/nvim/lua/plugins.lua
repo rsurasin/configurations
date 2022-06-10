@@ -21,6 +21,16 @@ return require('packer').startup(function(use)
     config = [[require('plugin/nvim-web-devicons')]],
   }
   -- Colorschemes
+  -- Gruvbox Theme w/ Plugin Support
+  use {
+    "ellisonleao/gruvbox.nvim",
+    config = [[require('colors/gruvbox')]],
+  }
+  -- Dracula Theme w/ Plugin Support
+  use {
+    'Mofiqul/dracula.nvim',
+    -- config = [[require('colors/dracula')]],
+  }
   -- Tokyonight Theme w/ Plugin Support
   use {
     'folke/tokyonight.nvim',
@@ -45,7 +55,7 @@ return require('packer').startup(function(use)
   use {
     'catppuccin/nvim',
     as = 'catppuccin',
-    config = [[require('colors/catppuccin')]],
+    -- config = [[require('colors/catppuccin')]],
   }
   -- Kanagawa Theme w/ Plugin Support
   use {
