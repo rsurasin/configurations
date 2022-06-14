@@ -15,9 +15,11 @@ pyenv init - | source
 # Remove Greeting 
 set -U fish_greeting
 
-# manpage
 # THEMES: Dracula, gruvbox-dark
-set -x MANPAGER "sh -c 'col -bx | bat --theme=gruvbox-dark -l man -p'"
+# bat
+set -x BAT_THEME "gruvbox-dark"
+# manpage
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # Rust
 fish_add_path $HOME/.cargo/bin
@@ -27,16 +29,15 @@ fish_add_path $HOME/Development/tools/flutter/bin
 
 # fzf
 set -x FZF_DEFAULT_OPTS "--height 40% --layout=reverse --border --cycle --preview-window=wrap --marker='*' --no-mouse --bind='ctrl-n:down,ctrl-p:up'"
-set -x FZF_DEFAULT_COMMAND "fd --type f --follow"
-set -x FZF_CTRL_T_COMMAND "fd --follow"
-set -x FZF_ALT_C_COMMAND "fd -a --type d --follow --base-directory $HOME"
+set -x FZF_DEFAULT_COMMAND "fd --type f"
+set -x FZF_CTRL_T_COMMAND "fd"
+set -x FZF_ALT_C_COMMAND "fd -a --type d --base-directory $HOME"
 
 # fzf keybindings
 fzf_key_bindings
 
 # alias
-# THEMES: Dracula, gruvbox-dark
-alias fz "fd --type f --follow | fzf --height 40% --layout=reverse --border --cycle --preview-window=wrap --marker='*' --no-mouse --preview 'bat --style=numbers --theme=gruvbox-dark --color=always --line-range :500 {}' --bind='ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up,ctrl-o:toggle-preview,ctrl-n:down,ctrl-p:up,ctrl-y:execute-silent(echo -n {} | pbcopy)'"
+alias fz "fd --type f | fzf --height 40% --layout=reverse --border --cycle --preview-window=wrap --marker='*' --no-mouse --preview 'bat --style=numbers --color=always --line-range :500 {}' --bind='ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up,ctrl-o:toggle-preview,ctrl-n:down,ctrl-p:up,ctrl-y:execute-silent(echo -n {} | pbcopy)'"
 
 # functions
 function nvf
@@ -46,7 +47,7 @@ end
 
 # BUG: fd is slow - https://github.com/sharkdp/fd/issues/599
 function cdf
-    set dir (fd -a --type d --follow --base-directory $HOME | fzf --height 40% --layout=reverse --border --cycle) || return
+    set dir (fd -a --type d --base-directory $HOME | fzf --height 40% --layout=reverse --border --cycle) || return
     cd "$dir"
 end
 
