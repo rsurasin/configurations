@@ -13,7 +13,19 @@ lsp_installer.settings({
 })
 
 -- Automatically install servers on Neovim load (if not installed prior)
-local servers = {"rust_analyzer", "pyright", "tsserver", "sumneko_lua", "cssls", "html", "dockerls", "yamlls"}
+local servers = {
+    "rust_analyzer",
+    "pyright",
+    "tsserver",
+    "sumneko_lua",
+    "cssls",
+    "html",
+    "dockerls",
+    "yamlls",
+    "gopls",
+    "jsonls",
+    "graphql",
+}
 
 for _, name in pairs(servers) do
     local server_is_found, server = lsp_installer.get_server(name)
