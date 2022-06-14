@@ -20,10 +20,15 @@ vim.keymap.set("n", "<leader>+", "<C-W>5+", opts) -- Current buffer window resiz
 vim.keymap.set("n", "<leader>d", ":bd<CR>", opts) -- Delete Buffer
 
 -- Lazy Loaded Plugins Keymaps
+-- nvim-tree keymap
+-- Open/close nvim-tree
+vim.keymap.set("n", "<leader>o", "<cmd>NvimTreeToggle<cr>", opts)
+
 -- telescope keymap
--- Search for files & open file browser
+-- Search for files & open projects
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", opts)
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
+vim.keymap.set("n", "<leader>fc", "<cmd>Telescope cder<cr>", opts)
 -- Ripgrep Search
 vim.keymap.set("n", "<leader>rf", "<cmd>Telescope live_grep<cr>", opts)
 vim.keymap.set("n", "<leader>rs", "<cmd>Telescope grep_string<cr>", opts)

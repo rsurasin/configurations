@@ -1,13 +1,5 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-vim.g.nvim_tree_indent_markers = 1 -- Show indent markers when folders are open
-vim.g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 0
-}
-
 -- Default Mappings
 local list = {
   { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
@@ -44,83 +36,20 @@ local list = {
   { key = "g?",                           cb = tree_cb("toggle_help") },
 }
 
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "",
-    unmerged = "",
-    renamed = "",
-    untracked = "",
-    deleted = "",
-    ignored = "◌"
-  },
-  folder = {
-    arrow_open = "",
-    arrow_closed = "",
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-    symlink_open = "",
-  },
-  lsp = {
-    hint = "",
-    info = "",
-    warning = "",
-    error = "",
-  },
-}
-
--- Required for project-nvim plugin
-vim.g.nvim_tree_respect_buf_cwd = 1
-
 require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
-  auto_close          = true, -- Closes the tree when its the last window
   open_on_tab         = true, -- Will open the tree (if open) when switching to a new tab
-  hijack_cursor       = false,
+  respect_buf_cwd     = true, -- Required for project-nvim plugin
   update_cwd          = true, -- Required for project-nvim plugin
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
-  diagnostics = {
-    enable = false,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    }
-  },
   update_focused_file = {
     enable      = true, -- Required for project-nvim plugin
     update_cwd  = true, -- Required for project-nvim plugin
     ignore_list = {}
   },
-  system_open = {
-    cmd  = nil,
-    args = {}
+  renderer = {
+    indent_markers = {
+      enable = true, -- Show indent markers when folders are open
+    },
   },
-  filters = {
-    dotfiles = false,
-    custom = {}
-  },
-  view = {
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
-    side = 'left',
-    auto_resize = false,
-    mappings = {
-      custom_only = false,
-      list = {}
-    }
-  }
 }

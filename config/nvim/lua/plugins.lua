@@ -96,6 +96,13 @@ return require('packer').startup(function(use)
 
   -- Utility
   -- TODO: Look into editorconfig plugin
+  -- File Explorer
+  use {
+    'kyazdani42/nvim-tree.lua',
+    config = [[require('plugin/nvim-tree')]],
+    requires = 'kyazdani42/nvim-web-devicons',
+    cmd = 'NvimTreeToggle',
+  }
   -- Fuzzy Finder
   use {
     'nvim-telescope/telescope.nvim',
@@ -107,8 +114,11 @@ return require('packer').startup(function(use)
   -- Telescope Extensions
   -- fzf
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+  -- cder - change directory within telescope
+  use {'zane-/cder.nvim'}
   -- Telescope-file-browser
-  use { "nvim-telescope/telescope-file-browser.nvim" }
+  -- TODO: When this plugin incorporates depth, come back
+  -- use { "nvim-telescope/telescope-file-browser.nvim" }
   -- Git
   use {
     'lewis6991/gitsigns.nvim',
