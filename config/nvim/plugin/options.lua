@@ -19,6 +19,7 @@ opt.syntax = "on" -- nvim default
 opt.hidden = true -- nvim default
 opt.termguicolors = true
 opt.scrolloff = 8 -- Cursor doesn't have to be at the end of the buffer to scroll
+opt.clipboard = "unnamedplus" -- Use system clipboard
 
 -- Tabs
 opt.tabstop = 4 -- Width of tab
