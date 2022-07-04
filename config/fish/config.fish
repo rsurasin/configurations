@@ -23,7 +23,8 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # Rust
 fish_add_path $HOME/.cargo/bin
-
+# Go
+fish_add_path /usr/local/go/bin
 # Flutter
 fish_add_path $HOME/Development/tools/flutter/bin
 
