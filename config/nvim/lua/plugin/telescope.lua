@@ -26,11 +26,13 @@ require('telescope').setup {
         '--exclude=Pictures',
         '--exclude=Applications',
         '--exclude=node_modules',
+        '--exclude=AUR',
+        '--exclude=go',
         '.',
         os.getenv('HOME')
       },
       previewer_command =
-        'exa -a --color=always -T --level=3 --git-ignore --long '..
+        'exa -a --color=always -T --level=3 --icons --git-ignore --long '..
         '--no-permissions --no-user --no-filesize --git --ignore-glob=.git',
       command_executor = { 'fish', '-c' },
       pager_command = 'bat --plain --paging=always --pager="less -RS"',
